@@ -1,0 +1,31 @@
+---
+title: "Self-hosting and NAT Loopback"
+date: 2023-05-14
+---
+
+When I started hosting my services, I quickly ran into a major problem. Everything was timing out, but it was somehow working just fine when I was *not* connected to my home network! So turns out, this was because my router does not support what's called [NAT Loopback](https://en.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) (also called NAT Hairpinning).
+
+Like many things you'll see in production, [the 32-bit address space of IPv4 was meant to be for a prototype](https://www.youtube.com/watch?v=17GtmwyvmWE&feature=share&t=26m18s). This limits the total number of IP addresses to 2^32, which is 4,294,967,296. Unfortunately, nowadays that's nowhere near enough. The real solution is [IPv6](https://en.wikipedia.org/wiki/IPv6), but [adoption is extremely poor](https://www.google.com/intl/en/ipv6/statistics.html#tab=per-country-ipv6-adoption). [NAT](https://en.wikipedia.org/wiki/Network_address_translation) is the necessary evil that keeps things running. It works by sharing a single IPv4 address across an entire household, where the individual devices are assigned "private IP addresses" from the list defined in [RFC1918](https://datatracker.ietf.org/doc/html/rfc1918).
+
+When your friend tries to connect to your server, they route to your server just fine. But when you try to connect to your server using the public IP address (the one you gave your friend), because your router does not support NAT Loopback, your connection simply times out. The easiest solution is to see if you can reconfigure your router to enable the NAT Loopback feature. Unfortunately, it's fairly unlikely to be supported, as most home routers do not allow configuring this setting.
+
+The next simplest solution is to offload the work to the cloud. You would be using something like [CloudFlare Tunnel](https://www.cloudflare.com/en-ca/products/tunnel/), which has a free tier, and they would simply deal with the hard part for you. Furthermore, this significantly improves the security of your infrastructure as no ports need to be open and you can utilize their WAF, authentication, and more. However, this requires that you trust CloudFlare as they will be able to see and modify all of your communication. It will also incur a significant latency penalty as you will need to talk to their cloud servers to use your own service, adding an additional hop for what could have easily been a local connection.
+
+A more complicated solution is to have a domain with multiple subdomains. One subdomain would have the private IP address set, and another would have the external IP address set. You would simply use two different URLs based on whether you are home or not. This, however, comes with some significant drawbacks.
+
+- If you are hosting a web service, the origin will be different. The browser will not be aware that they are the same website. For example, if you open your service from your phone, log in, and then leave your house, the "new" service will not be aware of the context stored before leaving.
+    - If you control how the service stores data, you can use subdomains with cookies that have the effective domain set as the main domain name itself to somewhat work around this issue. For example, if I have a service at `service.home.johnthenerd.com` and it writes a cookie that has the effective domain set to `johnthenerd.com`, this cookie will be accessible from both `service.home.johnthenerd.com` *and* `service.johnthenerd.com`.
+
+- If you host multiple webpages on the same server (which is done via virtual hosts in Apache and server blocks in NGINX), you will have to set up duplicates for each hostname or IP address you'd like to serve. If you use HTTPS, you will also need to serve the correct certificate. Since you need your hostname to be pointing to an private IP address, you also cannot use the HTTP-01 challenge in LetsEncrypt to get a certificate for the internal URL. I instead chose to use wildcard certificates using the LetsEncrypt DNS-01 challenge, but if you trust the devices in your network, you can also simply forego HTTPS in the internal URL.
+
+- Applications that require setting a "base URL" of sorts will typically only accept one, meaning some functionality might break on one of the two URLs you use.
+
+- If your router (or whatever runs your DNS server) has [DNS rebinding](https://en.wikipedia.org/wiki/DNS_rebinding) protection enabled, your internal URL will simply not work. The way these works is simple - they simply refuse to serve all DNS results that point to an private IP address. You will have to disable this feature to use this approach.
+
+The most complicated solution involves setting up what is called [split-horizon DNS](https://en.wikipedia.org/wiki/Split-horizon_DNS). This involves running your own DNS server, and exclusively using this for all DNS queries in your home devices by setting up your router to advertise this new DNS server as part of DHCP offers. Most routers support this. In my example, this DNS server would be configured to resolve `johnthenerd.com` as the private IP address of my server, overriding the real query result. I would then simply set up all of my services to be a CNAME record to `johnthenerd.com`. This comes with a few downsides:
+
+- This DNS server becomes a single point of failure. If this DNS server goes down, your entire house will start having connectivity issues.
+
+- Most browsers have DNS rebinding protections built-in. The way this works is by caching the DNS query result, and ignoring any change to the record. This might cause interruptions to your connection as you move in and out of your internal network, but a lower TTL might help mitigate the issue.
+
+- This does not work when the clients are using [DNS-over-HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS), or if they have a DNS server configured manually. Since DNS-over-HTTPS is very common nowadays, I recommend using this with a combination of another solution above.

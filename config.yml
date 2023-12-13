@@ -1,0 +1,103 @@
+baseURL: "https://johnthenerd.com"
+theme: "PaperMod"
+languageCode: 'en-us'
+title: "John's Website"
+enableRobotsTXT: true
+copyright: ' '  # disable copyright text on bottom
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "John's Personal Website"
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: false
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  label:
+    text: "Home"
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi visitor, I'm John!"
+    Content: |
+      {{< homeinfo >}}
+      I've been messing around with just about anything that runs Linux for over a decade. I'm also a huge fan of security, automation, and all things IoT.
+      This website (and the servers it runs on) is a perfect combination of this. I host it on my own hardware, which is also responsible for things like home automation (thanks to [HomeAssistant](https://home-assistant.io)), a VPN, shared storage, backups, and so much more. It's also locked behind a WAF, IPS, and multiple forms of brute-force protection.
+      At work, I am responsible for maintaining our team's AWS infrastructure and security, improving our system stability, automating the boring stuff, and overall doing my best to help my colleagues.
+      This blog is where I explain all the problems I had trying to set up my home infrastructure, and how I solved them. I also like to ramble a lot. I hope it helps you!
+      {{< /homeinfo >}}
+
+  socialIcons:
+    - name: "email"
+      url: "mailto:hi@johnthenerd.com"
+    - name: "github"
+      url: "https://github.com/JohnTheNerd"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/john-karabudak"
+    - name: "keybase"
+      url: "https://keybase.io/johnthenerd"
+    - name: "rss"
+      url: "/index.xml"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/JohnTheNerd/website/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: blog
+      name: blog
+      url: /blog/
+      weight: 10
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 20
+    - identifier: résumé
+      name: résumé
+      url: /resume.pdf
+      weight: 30
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai

@@ -1,0 +1,3 @@
+{{ range split .Inner "\n" }}
+<p>{{ printf "%s\n" . | markdownify }}</p><br>
+{{ end }}

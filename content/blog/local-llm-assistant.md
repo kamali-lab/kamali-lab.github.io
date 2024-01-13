@@ -1,5 +1,5 @@
 ---
-title: "Building a LLM voice assistant to control my smart home"
+title: "Building a fully local LLM voice assistant to control my smart home"
 date: 2024-01-13
 ---
 

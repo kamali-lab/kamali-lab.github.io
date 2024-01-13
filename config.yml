@@ -12,6 +12,7 @@ minify:
 params:
   env: production
   title: "John's Personal Website"
+  description: "My personal blog where I talk way too much about computers"
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false

@@ -31,7 +31,7 @@ The architecture behind this, it turns out, is very much not simple. Although I 
 
 Here is the end result!
 
-{{< video src="/videos/local-llm-assistant.mp4" type="mp4" >}}
+{{< video src="/videos/local-llm-assistant.mp4" width="75%" height="50%" type="mp4" >}}
 
 Since I want to have a general-purpose LLM that is usable outside of HomeAssistant, I went with [vLLM](https://github.com/vllm-project/vllm) for my inference engine. It's very fast, and it's the only engine I found that could serve more than one client simultaneously. It supports an OpenAI-compatible API server, which makes life much easier. I went with Mistral AI's incredible [Mixtral model](https://mistral.ai/news/mixtral-of-experts/), because the VRAM vs performance trade-off works perfectly for my slow 4060Ti's.
 

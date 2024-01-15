@@ -9,11 +9,16 @@ RUN pip install -r requirements.txt
 # node/npm to render JSONResume
 # git to clone the repo
 # openssh-client because we're using SSH keys to authenticate
-# the last line for puppeteer to work (which is used by JSONResume)
-RUN apt-get update && \
-    apt-get install -y git openssh-client nodejs npm hugo \
-    libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && \
-    rm -rf /var/lib/apt/lists/*
+# the rest is for puppeteer to work (which is used by JSONResume)
+RUN apt-get update \
+    && apt-get install -y git openssh-client nodejs npm hugo \
+    && libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 wget gnupg \
+    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
+      --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
 # install resume-cli globally since it'll be called by python
 RUN npm install -g resume-cli

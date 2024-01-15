@@ -5,14 +5,19 @@
     "website": "johnthenerd.com",
     "summary": "DevOps professional with a strong background in automation, Linux systems, and cloud infrastructure. Experienced in optimizing data pipelines, driving innovation, and implementing effective security measures. Proficient in Docker, Ansible, and CloudFormation, delivering performance enhancements and cost savings.",
     "location": {
-      "city": "St. John's",
-      "region": "Newfoundland and Labrador"
+      "region": "Newfoundland and Labrador",
+      "countryCode": "CA"
     },
     "profiles": [
       {
         "network": "GitHub",
         "username": "JohnTheNerd",
         "url": "github.com/JohnTheNerd"
+      },
+      {
+        "network": "Hacker News",
+        "username": "JohnTheNerd",
+        "url": "news.ycombinator.com/user?id=JohnTheNerd"
       },
       {
         "network": "LinkedIn",
@@ -29,12 +34,12 @@
       "highlights": [
         "Spearheaded our efforts to pay down technical debt efforts, decreasing our after-hours pages by over 50%.",
         "Optimized our weather portal performance, increasing our Google PageSpeed Insights score by 100%.",
-        "Singlehandedly planned and executed all technical aspects of our group's COVID-19 business continuity plan.",
-        "Played a key role in migrating our group to the latest meteorological display and analysis solution used operationally by the United States National Weather Service, processing over a terabyte of data every day.",
+        "Improved data ingestion times by 2000% by designing an on-event data ingestion pipeline.",
         "Innovated our data ingestion pipeline to horizontally scale AWS EC2 spot instances and dramatically improve processing times while achieving up to 70% cost savings.",
         "Achieved over 10% savings in our group's AWS bill by using a combination of EC2 spot instances, AWS S3 Glacier Deep Archive, AWS Lambda, AWS VPC Endpoints, and other technologies.",
-        "Improved data ingestion times by 2000% by designing an on-event data ingestion pipeline.",
-        "Spearheaded the security culture within our group, including the implementation of network-level access control policies for microservices, short-lived developer access keys, TPM-backed VPN authentication, and much more."
+        "Championed the transformation of security protocols and culture, introducing pivotal changes, including a complete overhaul of developer permissions and promoting security as a priority.",
+        "Singlehandedly planned and executed all technical aspects of our group's COVID-19 business continuity plan.",
+        "Managed all technical and interpersonal aspects of a sophisticated meteorological system with hundreds of servers during a crucial inter-company transition."
       ]
     }
   ],
@@ -53,11 +58,6 @@
       "url": "https://github.com/JohnTheNerd/PySarra"
     },
     {
-      "name": "serial2mqtt",
-      "summary": "A Python microservice that streams LDJSON (Line-Delimited JSON) data from a serial port to a given MQTT broker.",
-      "url": "https://github.com/JohnTheNerd/serial2mqtt"
-    },
-    {
       "name": "simple-gluster-ansible",
       "summary": "An Ansible playbook to install and configure GlusterFS that is designed to be simple, with TLS encryption pre-configured.",
       "url": "https://github.com/JohnTheNerd/simple-gluster-ansible"
@@ -73,14 +73,9 @@
       "url": "https://johnthenerd.com/?turtletale"
     },
     {
-        "name": "WOLRelay",
-        "summary": "A Python Wake-on-LAN forwarder that is able to listen for ARP reply packets to track IP addresses without any agent process running on the target machine. JavaScript frontend, Flask backend.",
-        "url": "https://github.com/JohnTheNerd/WOLRelay"
+      "name": "WOLRelay",
+      "summary": "A Python Wake-on-LAN forwarder that is able to listen for ARP reply packets to track IP addresses without any agent process running on the target machine. JavaScript frontend, Flask backend.",
+      "url": "https://github.com/JohnTheNerd/WOLRelay"
     }
-  ],
-  "references": [
-    {
-      "contact": "In order to protect the privacy of my references from online scrapers, it is not publicly available. I can happily provide it upon request, though!"
-    }
-]
+  ]
 }

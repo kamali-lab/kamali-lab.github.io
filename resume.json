@@ -3,7 +3,6 @@
     "name": "John Karabudak",
     "email": "hello@johnthenerd.com",
     "website": "johnthenerd.com",
-    "summary": "DevOps professional with a strong background in automation, Linux systems, and cloud infrastructure. Experienced in optimizing data pipelines, driving innovation, and implementing effective security measures. Proficient in Docker, Ansible, and CloudFormation, delivering performance enhancements and cost savings.",
     "location": {
       "region": "Newfoundland and Labrador",
       "countryCode": "CA"
@@ -56,6 +55,11 @@
       "name": "PySarra",
       "summary": "A Python client for Environment Canada's MQTT-based Sarracenia service that is designed to be easy to use.",
       "url": "https://github.com/JohnTheNerd/PySarra"
+    },
+    {
+      "name": "serial2mqtt",
+      "summary": "A Python microservice that streams LDJSON (Line-Delimited JSON) data from a serial port to a given MQTT broker.",
+      "url": "https://github.com/JohnTheNerd/serial2mqtt"
     },
     {
       "name": "simple-gluster-ansible",

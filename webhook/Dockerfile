@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 # the rest is for puppeteer to work (which is used by JSONResume)
 RUN apt-get update \
     && apt-get install -y git openssh-client nodejs npm hugo \
-    && libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 wget gnupg \
+    libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 wget gnupg \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
     && apt-get update \

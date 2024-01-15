@@ -48,7 +48,7 @@ params:
 
   socialIcons:
     - name: "email"
-      url: "mailto:hi@johnthenerd.com"
+      url: "mailto:hello@johnthenerd.com"
     - name: "github"
       url: "https://github.com/JohnTheNerd"
     - name: "ycombinator"

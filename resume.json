@@ -11,17 +11,17 @@
       {
         "network": "GitHub",
         "username": "JohnTheNerd",
-        "url": "github.com/JohnTheNerd"
+        "url": "https://github.com/JohnTheNerd"
       },
       {
         "network": "Hacker News",
         "username": "JohnTheNerd",
-        "url": "news.ycombinator.com/user?id=JohnTheNerd"
+        "url": "https://news.ycombinator.com/user?id=JohnTheNerd"
       },
       {
         "network": "LinkedIn",
         "username": "john-karabudak",
-        "url": "linkedin.com/in/john-karabudak"
+        "url": "https://linkedin.com/in/john-karabudak"
       }
     ]
   },

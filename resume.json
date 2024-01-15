@@ -78,7 +78,7 @@
     },
     {
       "name": "WOLRelay",
-      "summary": "A Python Wake-on-LAN forwarder that is able to listen for ARP reply packets to track IP addresses without any agent process running on the target machine. JavaScript frontend, Flask backend.",
+      "summary": "A Python Wake-on-LAN forwarder that is able to listen for ARP reply packets to track IP addresses without any agent process running on the target machine.",
       "url": "https://github.com/JohnTheNerd/WOLRelay"
     }
   ]

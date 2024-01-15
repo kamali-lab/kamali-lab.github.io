@@ -3,8 +3,6 @@ title: "Building a fully local LLM voice assistant to control my smart home"
 date: 2024-01-13
 ---
 
-**Update**: I modified the two Jinja templates because I realized I forgot to include some minor changes I made in the past few days. I also fixed a few typos, included a few sample prompts, and added a demo video to show it off!
-
 I've had my days with Siri and Google Assistant. While they have the ability to control your devices, they cannot be customized and inherently rely on cloud services. In hopes of learning something new _and_ having something cool I could use in my life, I decided I want better.
 
 The premises are simple:

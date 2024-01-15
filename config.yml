@@ -51,6 +51,8 @@ params:
       url: "mailto:hi@johnthenerd.com"
     - name: "github"
       url: "https://github.com/JohnTheNerd"
+    - name: "ycombinator"
+      url: "https://news.ycombinator.com/user?id=JohnTheNerd"
     - name: "linkedin"
       url: "https://linkedin.com/in/john-karabudak"
     - name: "keybase"

@@ -33,12 +33,12 @@
       "highlights": [
         "Spearheaded our efforts to pay down technical debt efforts, decreasing our after-hours pages by over 50%.",
         "Optimized our weather portal performance, increasing our Google PageSpeed Insights score by 100%.",
-        "Improved data ingestion times by 2000% by designing an on-event data ingestion pipeline.",
-        "Innovated our data ingestion pipeline to horizontally scale AWS EC2 spot instances and dramatically improve processing times while achieving up to 70% cost savings.",
+        "Redesigned our data ingestion pipeline, achieving a 2000% improvement in processing times and reducing EC2 instance costs by 70%.",
         "Achieved over 10% savings in our group's AWS bill by using a combination of EC2 spot instances, AWS S3 Glacier Deep Archive, AWS Lambda, AWS VPC Endpoints, and other technologies.",
-        "Championed the transformation of security protocols and culture, introducing pivotal changes, including a complete overhaul of developer permissions and promoting security as a priority.",
-        "Singlehandedly planned and executed all technical aspects of our group's COVID-19 business continuity plan.",
-        "Managed all technical and interpersonal aspects of a sophisticated meteorological system with hundreds of servers during a crucial inter-company transition."
+        "Championed the transformation of our operational security, introducing pivotal changes, including a complete overhaul of developer permissions and cultural changes promoting security as a priority.",
+        "Orchestrated all technical aspects of the group's COVID-19 business continuity plan, ensuring uninterrupted operations during the pandemic.",
+        "Known as a key crisis responder, adept at innovating immediate solutions in emergencies. Famously restored production operations within hours, even during AWS outages.",
+        "Managed all technical and interpersonal aspects of a sophisticated meteorological system with hundreds of servers during a crucial inter-company carveout."
       ]
     }
   ],

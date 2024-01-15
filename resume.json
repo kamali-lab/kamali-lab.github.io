@@ -33,12 +33,12 @@
       "highlights": [
         "Spearheaded our efforts to pay down technical debt efforts, decreasing our after-hours pages by over 50%.",
         "Optimized our weather portal performance, increasing our Google PageSpeed Insights score by 100%.",
-        "Redesigned our data ingestion pipeline, achieving a 2000% improvement in processing times and reducing EC2 instance costs by 70%.",
+        "Redesigned our data ingestion pipeline, achieving a 2000% improvement in processing times and reducing ingester EC2 instance costs by 70%.",
         "Achieved over 10% savings in our group's AWS bill by using a combination of EC2 spot instances, AWS S3 Glacier Deep Archive, AWS Lambda, AWS VPC Endpoints, and other technologies.",
-        "Championed the transformation of our operational security, introducing pivotal changes, including a complete overhaul of developer permissions and cultural changes promoting security as a priority.",
+        "Championed the transformation of our operational security, introducing pivotal changes. This included a complete overhaul of all AWS permissions, removal of local administrative privileges from non-technical staff, and cultural changes promoting security as a priority.",
         "Orchestrated all technical aspects of the group's COVID-19 business continuity plan, ensuring uninterrupted operations during the pandemic.",
         "Known as a key crisis responder, adept at innovating immediate solutions in emergencies. Famously restored production operations within hours, even during AWS outages.",
-        "Managed all technical and interpersonal aspects of a sophisticated meteorological system with hundreds of servers during a crucial inter-company carveout."
+        "Managed all technical and interpersonal aspects of a sophisticated meteorological system with hundreds of servers during a crucial inter-company carveout, while simultaneously automating most of the meteorologist onboarding and migration processes to be more efficient and secure."
       ]
     }
   ],

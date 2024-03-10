@@ -87,6 +87,10 @@ def clone_and_build(repo_url, tmp_dir):
 
         build_dir = os.path.join(repo_dir, "public")
 
+        logging.info("Fixing the RSS XML...")
+        build_xml_path = os.path.join(build_dir, "index.xml")
+        shutil.copyfile(os.path.join(build_dir, "blog", "index.xml"), build_xml_path)
+
         logging.info("Rendering the JSON resume...")
         json_resume_path = os.path.join(repo_dir, "resume.json")
         shutil.copyfile(json_resume_path, os.path.join(build_dir, "resume.json"))

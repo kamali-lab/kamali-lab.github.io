@@ -11,7 +11,7 @@ I started with the easy and expensive way. After some more calculations in front
 
 {{< video src="/videos/ha-assist-without-rag.webm" width="100%" height="50%" type="webm" >}}
 
-It would sure be nice to have something much smarter and faster... like this!
+It would sure be nice to have something much smarter and faster. Say, like this?
 
 {{< video src="/videos/ha-assist-rag-example.mp4" width="50%" height="50%" type="mp4" >}}
 
@@ -54,3 +54,7 @@ Before:
 After:
 
 {{< video src="/videos/ha-assist-with-rag.webm" width="100%" height="50%" type="webm" >}}
+
+Of course, if we're dealing with very long prompts and responses, even after this optimization, it's going to feel very slow. But I think that's sometimes worth it:
+
+{{< video src="/videos/ha-assist-rag-complex-example.mp4" width="50%" height="50%" type="mp4" >}}

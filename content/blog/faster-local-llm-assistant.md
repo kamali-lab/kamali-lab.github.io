@@ -5,6 +5,8 @@ date: 2024-06-14
 
 If you read [my previous blog post](../local-llm-assistant), you probably already know that I like my smart home open-source and very local, and that certainly includes any voice assistant I may have. If you watched the video demo, you have probably also found out that it's... slow. Trust me, I did too.
 
+Prefix caching helps, but it feels like cheating. Sure, it'll look amazing in a demo, but as soon as I start using my LLM for other things (which I do, quite often), that cache is going to get evicted and that first prompt is still going to be slow.
+
 I started with the easy and expensive way. After some more calculations in front of my breaker, I decided that if I use a specific outlet in the kitchen and set a low power limit (260W), I can safely run dual RTX 3090's. It got me some really angry looks from my financial advisor, the ability to offload Whisper to GPU, and [Llama 3 70B AWQ](https://huggingface.co/casperhansen/llama-3-70b-instruct-awq) (which is amazing), but it's still just not fast enough:
 
 {{< video src="/videos/ha-assist-without-rag.webm" width="100%" height="50%" type="webm" >}}
@@ -12,8 +14,6 @@ I started with the easy and expensive way. After some more calculations in front
 It would sure be nice to have something much smarter and faster... like this!
 
 {{< video src="/videos/ha-assist-rag-example.mp4" width="50%" height="50%" type="mp4" >}}
-
-Prefix caching helps, but it feels like cheating. Sure, it'll look amazing in a demo, but as soon as I start using my LLM for other things (which I do, quite often), that cache is going to get evicted and that first prompt is still going to be slow.
 
 Let's think about a smarter solution. To do so, let's learn more about how a language model works in the first place! NVIDIA has some [amazing documentation](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/) about LLM inference that was incredibly helpful.
 

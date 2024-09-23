@@ -1,1 +1,2 @@
-# kamali-lab.github.io
+# Kamal Ali
+## Senior Undergraduate Student in Math

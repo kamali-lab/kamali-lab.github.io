@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on John&#39;s Website</title>
+    <link>https://johnthenerd.com/blog/</link>
+    <description>Recent content in Blogs on John&#39;s Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright> </copyright>
+    <lastBuildDate>Fri, 14 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://johnthenerd.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making my local LLM voice assistant faster and more scalable with RAG</title>
+      <link>https://johnthenerd.com/blog/faster-local-llm-assistant/</link>
+      <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://johnthenerd.com/blog/faster-local-llm-assistant/</guid>
+      <description>&lt;p&gt;If you read &lt;a href=&#34;../local-llm-assistant&#34;&gt;my previous blog post&lt;/a&gt;, you probably already know that I like my smart home open-source and very local, and that certainly includes any voice assistant I may have. If you watched the video demo, you have probably also found out that it&amp;rsquo;s&amp;hellip; slow. Trust me, I did too.&lt;/p&gt;&#xA;&lt;p&gt;Prefix caching helps, but it feels like cheating. Sure, it&amp;rsquo;ll look amazing in a demo, but as soon as I start using my LLM for other things (which I do, quite often), that cache is going to get evicted and that first prompt is still going to be slow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a fully local LLM voice assistant to control my smart home</title>
+      <link>https://johnthenerd.com/blog/local-llm-assistant/</link>
+      <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://johnthenerd.com/blog/local-llm-assistant/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve had my days with Siri and Google Assistant. While they have the ability to control your devices, they cannot be customized and inherently rely on cloud services. In hopes of learning something new &lt;em&gt;and&lt;/em&gt; having something cool I could use in my life, I decided I want better.&lt;/p&gt;&#xA;&lt;p&gt;The premises are simple:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;I want my new assistant to be sassy and sarcastic.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;I want everything running local. No exceptions. There is no reason for my coffee machine downstairs to talk to a server on the other side of the country.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Self-hosting and NAT Loopback</title>
+      <link>https://johnthenerd.com/blog/nat-loopback/</link>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://johnthenerd.com/blog/nat-loopback/</guid>
+      <description>&lt;p&gt;When I started hosting my services, I quickly ran into a major problem. Everything was timing out, but it was somehow working just fine when I was &lt;em&gt;not&lt;/em&gt; connected to my home network! So turns out, this was because my router does not support what&amp;rsquo;s called &lt;a href=&#34;https://en.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning&#34;&gt;NAT Loopback&lt;/a&gt; (also called NAT Hairpinning).&lt;/p&gt;&#xA;&lt;p&gt;Like many things you&amp;rsquo;ll see in production, &lt;a href=&#34;https://www.youtube.com/watch?v=17GtmwyvmWE&amp;amp;feature=share&amp;amp;t=26m18s&#34;&gt;the 32-bit address space of IPv4 was meant to be for a prototype&lt;/a&gt;. This limits the total number of IP addresses to 2^32, which is 4,294,967,296. Unfortunately, nowadays that&amp;rsquo;s nowhere near enough. The real solution is &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv6&#34;&gt;IPv6&lt;/a&gt;, but &lt;a href=&#34;https://www.google.com/intl/en/ipv6/statistics.html#tab=per-country-ipv6-adoption&#34;&gt;adoption is extremely poor&lt;/a&gt;. &lt;a href=&#34;https://en.wikipedia.org/wiki/Network_address_translation&#34;&gt;NAT&lt;/a&gt; is the necessary evil that keeps things running. It works by sharing a single IPv4 address across an entire household, where the individual devices are assigned &amp;ldquo;private IP addresses&amp;rdquo; from the list defined in &lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc1918&#34;&gt;RFC1918&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

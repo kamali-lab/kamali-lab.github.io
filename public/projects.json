@@ -1,0 +1,61 @@
+
+[
+  {
+    "title": "Portfolio Website (This one!)",
+    "description": "A personal portfolio site built with Next.js, TypeScript, and Tailwind CSS to showcase publications and projects, featuring AI-powered summaries.",
+    "projectUrl": "#",
+    "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Genkit"],
+    "category": "Project"
+  },
+  {
+    "title": "Data Analysis Toolkit",
+    "description": "A collection of Python scripts for common data cleaning, analysis, and visualization tasks using Pandas and Matplotlib.",
+    "projectUrl": "https://github.com/your-username/data-analysis-toolkit",
+    "technologies": ["Python", "Pandas", "Matplotlib", "Jupyter"],
+    "category": "Project"
+  },
+  {
+    "title": "Machine Learning Model Deployment API",
+    "description": "A Flask API to serve a pre-trained machine learning model for real-time predictions.",
+    "projectUrl": "https://github.com/your-username/ml-deployment-api",
+    "technologies": ["Python", "Flask", "Scikit-learn", "Docker"],
+    "category": "Project"
+  },
+  {
+    "title": "Algorithmic Trading Bot",
+    "description": "A Python-based algorithmic trading bot that uses machine learning to predict stock price movements and execute trades.",
+    "projectUrl": "https://github.com/your-username/trading-bot",
+    "technologies": ["Python", "TensorFlow", "Keras", "Alpaca API"],
+    "category": "Project"
+  },
+  {
+    "title": "Customer Churn Prediction System",
+    "description": "A system for predicting customer churn using machine learning techniques. Includes data preprocessing, feature engineering, model training, and deployment.",
+    "projectUrl": "https://github.com/your-username/churn-prediction",
+    "technologies": ["Python", "Scikit-learn", "Pandas", "AWS"],
+    "category": "Project"
+  },
+  {
+    "title": "Medical Image Analysis Platform",
+    "description": "A web-based platform for analyzing medical images using deep learning. Supports image segmentation, classification, and annotation tasks.",
+    "projectUrl": "https://github.com/your-username/medical-imaging",
+    "technologies": ["Python", "TensorFlow", "Flask", "React"],
+    "category": "Project"
+  },
+  {
+    "title": "Crime Rate Prediction Model",
+    "description": "A model to predict crime rates in different areas using historical crime data and socio-economic factors. Implemented using statistical methods and machine learning.",
+    "projectUrl": "https://github.com/your-username/crime-prediction",
+    "technologies": ["R", "Linear Regression", "Data Visualization"],
+    "category": "Project"
+  },
+  {
+    "title": "Sentiment Analysis of Social Media",
+    "description": "Tool that analyzes sentiment of Twitter data related to a specific topic. Includes real-time data collection and sentiment score tracking.",
+    "projectUrl": "https://github.com/your-username/social-sentiment",
+    "technologies": ["Python", "NLTK", "Twitter API"],
+    "category": "Project"
+  }
+]
+
+    

@@ -1,0 +1,77 @@
+
+[
+  {
+    "title": "Advanced Calculus Techniques",
+    "abstract": "A comprehensive study of advanced calculus techniques, focusing on applications in mathematical modeling and physics. Explores topics such as multivariable calculus, differential equations, and Fourier analysis.",
+    "pdfUrl": "https://example.com/calculus.pdf",
+    "category": "Applied Math"
+  },
+  {
+    "title": "Machine Learning Algorithms",
+    "abstract": "An overview of various machine learning algorithms and their applications in data mining and predictive analytics. Covers supervised learning, unsupervised learning, and reinforcement learning techniques.",
+    "pdfUrl": "https://example.com/ml.pdf",
+    "category": "ML"
+  },
+  {
+    "title": "Data Science Fundamentals",
+    "abstract": "Introduction to the core concepts of data science, including data collection, cleaning, analysis, and visualization. Emphasizes the use of Python and related libraries for data manipulation and statistical modeling.",
+    "pdfUrl": "https://example.com/ds.pdf",
+    "category": "Data Science"
+  },
+  {
+    "title": "Bayesian Statistics",
+    "abstract": "An exploration of Bayesian statistical methods, including prior and posterior distributions, Bayesian inference, and Markov Chain Monte Carlo (MCMC) techniques.",
+    "pdfUrl": "https://example.com/bayesian.pdf",
+    "category": "Statistics"
+  },
+  {
+    "title": "Stochastic Processes",
+    "abstract": "A deep dive into the theory and application of stochastic processes, such as Markov processes, Poisson processes, and Brownian motion. Focuses on modeling random phenomena in finance, physics, and engineering.",
+    "pdfUrl": "https://example.com/stochastic.pdf",
+    "category": "Probability"
+  },
+  {
+    "title": "Information Theory",
+    "abstract": "Fundamental concepts of information theory and coding, including entropy, mutual information, channel capacity, and error-correcting codes. Explores applications in data compression, cryptography, and communication systems.",
+    "pdfUrl": "https://example.com/info_theory.pdf",
+    "category": "Computer Science"
+  },
+  {
+    "title": "Riemann Hypothesis: A Proof Attempt",
+    "abstract": "An attempt to prove the Riemann Hypothesis using novel analytical techniques, exploring connections between prime numbers and complex analysis. (Note: This is a fictional research paper).",
+    "pdfUrl": "https://example.com/riemann.pdf",
+    "category": "Applied Math"
+  },
+  {
+    "title": "Deep Learning for Natural Language Processing",
+    "abstract": "Advanced deep learning techniques for natural language processing, including transformer networks, attention mechanisms, and contextual embeddings. Focuses on applications in machine translation and text generation.",
+    "pdfUrl": "https://example.com/nlp.pdf",
+    "category": "ML"
+  },
+  {
+    "title": "Causal Inference in Observational Studies",
+    "abstract": "Methods for causal inference in observational studies, including propensity score matching, instrumental variables, and regression discontinuity designs. Addresses the challenges of confounding and selection bias.",
+    "pdfUrl": "https://example.com/causal.pdf",
+    "category": "Data Science"
+  },
+  {
+    "title": "Non-parametric Statistical Methods",
+    "abstract": "An overview of non-parametric statistical methods, including rank tests, kernel density estimation, and bootstrapping. Emphasizes robust techniques that do not rely on strong distributional assumptions.",
+    "pdfUrl": "https://example.com/nonparametric.pdf",
+    "category": "Statistics"
+  },
+  {
+    "title": "Martingale Theory",
+    "abstract": "A rigorous treatment of martingale theory, including convergence theorems, stopping times, and applications to stochastic calculus and mathematical finance.",
+    "pdfUrl": "https://example.com/martingale.pdf",
+    "category": "Probability"
+  },
+  {
+    "title": "Quantum Computing Algorithms",
+    "abstract": "Exploration of quantum computing algorithms, including Shor's algorithm, Grover's algorithm, and quantum simulation. Discusses the potential impact of quantum computing on cryptography and scientific computing.",
+    "pdfUrl": "https://example.com/quantum.pdf",
+    "category": "Computer Science"
+  }
+]
+
+    

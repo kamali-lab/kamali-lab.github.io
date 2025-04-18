@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <pattern id="mathPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke-width="1" stroke-linecap="square">
+        <path stroke="#ddd" d="M0 5h40"/>
+        <path stroke="#ccc" d="M0 15h40"/>
+        <path stroke="#bbb" d="M0 25h40"/>
+        <path stroke="#aaa" d="M0 35h40"/>
+
+        <path stroke="#ddd" d="M5 0v40"/>
+        <path stroke="#ccc" d="M15 0v40"/>
+        <path stroke="#bbb" d="M25 0v40"/>
+        <path stroke="#aaa" d="M35 0v40"/>
+
+        <text x="10" y="12" font-size="12" fill="#999">∫</text>
+        <text x="25" y="12" font-size="12" fill="#888">Σ</text>
+        <text x="10" y="22" font-size="12" fill="#777">π</text>
+        <text x="25" y="22" font-size="12" fill="#666">∞</text>
+        <text x="10" y="32" font-size="12" fill="#555">√</text>
+        <text x="25" y="32" font-size="12" fill="#444">θ</text>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="40" height="40" fill="url(#mathPattern)"/>
+</svg>

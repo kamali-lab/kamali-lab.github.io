@@ -83,6 +83,10 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-[radial-gradient(ellipse_at_top,_var(--background)_20%,_rgba(255,255,255,0)_75%)] text-foreground;
+    @apply bg-background text-foreground;
+    background-image: url('/assets/math-pattern.svg');
+    background-size: cover; /* Cover the entire background */
+    background-repeat: repeat;
+    background-attachment: fixed; /* Keep the background fixed during scrolling */
   }
 }

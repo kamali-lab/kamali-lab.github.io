@@ -27,7 +27,7 @@ import {Label} from "@/components/ui/label";
 
 function LandingPage({onExploreClick}: {onExploreClick: () => void}) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-center p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center p-4">
       <motion.div
         initial={{opacity: 0, y: -50}}
         animate={{opacity: 1, y: 0}}

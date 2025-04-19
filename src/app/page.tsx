@@ -17,7 +17,6 @@ import {ScrollArea} from '@/components/ui/scroll-area';
 import {Separator} from '@/components/ui/separator';
 import {useToast} from '@/hooks/use-toast';
 import {Publication, Project, fetchPublications, fetchProjects} from '@/services/publication';
-import {summarizePaper} from '@/ai/flows/summarize-paper';
 import {Skeleton} from '@/components/ui/skeleton';
 import {Icons} from '@/components/icons';
 import {useIsMobile} from '@/hooks/use-mobile';
@@ -28,7 +27,7 @@ import {Label} from "@/components/ui/label";
 
 function LandingPage({onExploreClick}: {onExploreClick: () => void}) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center p-4 bg-[url('/assets/math-pattern.svg')] bg-cover">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-center p-4">
       <motion.div
         initial={{opacity: 0, y: -50}}
         animate={{opacity: 1, y: 0}}
@@ -60,10 +59,6 @@ function LandingPage({onExploreClick}: {onExploreClick: () => void}) {
 export default function Home() {
   const [publications, setPublications] = useState<Publication[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
-  const [selectedPublication, setSelectedPublication] =
-    useState<Publication | null>(null);
-  const [summary, setSummary] = useState<string>('');
-  const [isLoadingSummary, setIsLoadingSummary] = useState<boolean>(false);
   const [isLoadingPublications, setIsLoadingPublications] =
     useState<boolean>(true);
   const [isLoadingProjects, setIsLoadingProjects] = useState<boolean>(true);
@@ -109,27 +104,6 @@ export default function Home() {
   const handleExploreClick = () => {
     if (mainContentRef.current) {
       mainContentRef.current.scrollIntoView({behavior: 'smooth'});
-    }
-  };
-
-  const handleSummarize = async (publication: Publication) => {
-    setSelectedPublication(publication);
-    setSummary('');
-    setIsLoadingSummary(true);
-    try {
-      const result = await summarizePaper({paperTitle: publication.title});
-      setSummary(result?.elevatorPitch || 'Could not generate summary.');
-    } catch (error) {
-      console.error('Failed to summarize paper:', error);
-      setSummary('Failed to generate summary. Please try again.');
-      toast({
-        title: 'Summarization Error',
-        description:
-          'There was an issue generating the summary. Please check the console.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsLoadingSummary(false);
     }
   };
 
@@ -196,22 +170,6 @@ export default function Home() {
                         {publication.abstract}
                       </p>
                     </CardContent>
-                    <CardFooter className="mt-auto pt-4 flex justify-between items-center">
-                      <Button
-                        onClick={() => handleSummarize(publication)}
-                        disabled={isLoadingSummary && selectedPublication === publication}
-                        size="sm"
-                      >
-                        {isLoadingSummary && selectedPublication === publication ? (
-                          <>
-                            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                            Summarizing...
-                          </>
-                        ) : (
-                          'Summarize'
-                        )}
-                      </Button>
-                    </CardFooter>
                   </Card>
                 ))}
               </div>
@@ -262,36 +220,6 @@ export default function Home() {
               <p>No projects found.</p>
             )}
           </section>
-
-          {selectedPublication && (
-            <motion.section
-              id="summary"
-              className="mt-12"
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
-              transition={{duration: 0.5}}
-            >
-              <h2 className="text-2xl font-semibold mb-4">
-                Summary: {selectedPublication.title}
-              </h2>
-              <Card>
-                <CardContent className="p-6">
-                  {isLoadingSummary ? (
-                    <div className="flex items-center justify-center py-8">
-                      <Icons.spinner className="mr-2 h-6 w-6 animate-spin" />
-                      <span>Generating Summary...</span>
-                    </div>
-                  ) : (
-                    <ScrollArea className={isMobile ? "h-[200px]" : "h-[300px]"}>
-                      <p className="text-gray-700 whitespace-pre-wrap">
-                        {summary}
-                      </p>
-                    </ScrollArea>
-                  )}
-                </CardContent>
-              </Card>
-            </motion.section>
-          )}
 
           <section id="contact" className="mt-16 mb-16">
             <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>

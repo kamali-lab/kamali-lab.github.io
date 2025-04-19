@@ -1,8 +1,5 @@
 'use server';
 
-import fs from 'fs/promises';
-import path from 'path';
-
 /**
  * Represents a publication with its title, abstract, and link to the full paper.
  */
@@ -68,21 +65,23 @@ export async function getPublication(title: string): Promise<Publication> {
 }
 
 /**
- * Asynchronously retrieves a list of publications by reading the JSON file directly.
+ * Asynchronously retrieves a list of publications from a JSON file.
  *
  * @returns A promise that resolves to an array of Publication objects.
  */
 export async function fetchPublications(): Promise<Publication[]> {
   try {
-    // Construct the absolute path to the JSON file
-    const filePath = path.join(process.cwd(), 'public', 'publications.json');
-    // Read the file content
-    const fileContent = await fs.readFile(filePath, 'utf8');
-    // Parse the JSON data
-    const data = JSON.parse(fileContent) as Publication[];
+    // Assuming publications are stored in public/publications.json
+    const response = await fetch('/publications.json', {
+      cache: 'no-store', // Ensure fresh data
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to fetch publications: ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json() as Publication[];
     return data;
   } catch (error) {
-    console.error('Error reading publications file:', error);
+    console.error('Error fetching publications:', error);
     return []; // Return empty array on error
   }
 }
@@ -103,21 +102,23 @@ export async function getProject(title: string): Promise<Project> {
 }
 
 /**
- * Asynchronously retrieves a list of projects by reading the JSON file directly.
+ * Asynchronously retrieves a list of projects from a JSON file.
  *
  * @returns A promise that resolves to an array of Project objects.
  */
 export async function fetchProjects(): Promise<Project[]> {
   try {
-    // Construct the absolute path to the JSON file
-    const filePath = path.join(process.cwd(), 'public', 'projects.json');
-    // Read the file content
-    const fileContent = await fs.readFile(filePath, 'utf8');
-    // Parse the JSON data
-    const data = JSON.parse(fileContent) as Project[];
+    // Assuming projects are stored in public/projects.json
+    const response = await fetch('/projects.json', {
+      cache: 'no-store', // Ensure fresh data
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json() as Project[];
     return data;
   } catch (error) {
-    console.error('Error reading projects file:', error);
+    console.error('Error fetching projects:', error);
     return []; // Return empty array on error
   }
 }

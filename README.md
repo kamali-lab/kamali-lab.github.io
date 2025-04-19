@@ -1,5 +1,7 @@
-# Firebase Studio
+# Kamal Ali
+## Senior Undergraduate Student in Math
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+### Work Experience
+- Teaching Assistant, Memorial University
+- Wireless Consultant, Staples
+- Undergraduate Student Researcher, Memorial University

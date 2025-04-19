@@ -1,3 +1,4 @@
+'use server';
 
 /**
  * Represents a publication with its title, abstract, and link to the full paper.
